@@ -23,7 +23,7 @@
         content="Página de confirmação de envio de e-mail do portfólio de Rafaela Lemes — Desenvolvedora Full Stack.">
 
     <!-- Favicon: ícone que aparece na aba do navegador -->
-    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="assets/img/login.svg">
 
     <!-- Link para o arquivo CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -50,13 +50,26 @@
     </header>
 
     <main>
-        <section id="sucess" class="sucess_container">
-            <article class="sucess_content">
-                <img src="assets/img/sucess.svg" alt="Ícone de sucesso" class="sucess_icon" width="80" height="80">
-                <h1>E-mail enviado com sucesso!</h1>
-                <p>Obrigada por entrar em contato!</p>
-                <p>Logo mais retornarei a sua mensagem</p>
-                <div class="sucess_button">
+        <section id="login" class="login_container">
+            <article class="login_content">
+                <img src="assets/img/login.svg" alt="Tela de Login" class="logar" width="80" height="80">
+                <h1>Entre com os dados</h1>
+
+                <!-- FORMULÁRIO DE LOGIN -->
+                <form action="#" method="POST" class="login_form">
+
+                    <label for="emailLogin">E-mail</label>
+                    <input type="email" id="emailLogin" name="emailLogin" placeholder="Digite seu e-mail" required>
+
+                    <label for="senhaLogin">Senha</label>
+                    <input type="password" id="senhaLogin" name="senhaLogin" placeholder="Digite sua senha" required>
+
+                    <button type="submit" class="botao">Entrar</button>
+
+                
+                </form>
+
+                <div class="login_button">
                     <a href="index.html" class="botao" aria-label="Voltar para a página inicial do portfólio">Voltar
                         para o início</a>
                 </div>

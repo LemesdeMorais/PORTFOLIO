@@ -38,6 +38,9 @@
                     <li><a href="#hero">Início</a></li>
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#contact">Contato</a></li>
+                    <li><a href="login.html" class="login">
+                            <img src="assets/img/login.svg" width="20" height="20" class="login-icon">
+                        </a></li>
                 </ul>
             </nav>
         </div>
@@ -84,14 +87,18 @@
                 </div>
             </article>
 
-            <form id="formulario">
+
+            <form action="https://formsubmit.co/9a82e43f6a76c0a39ceb9b044d1c512d" method="POST" id="formulario">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/sucess.html">
+
                 <label for="nome">Nome</label>
                 <input id="nome" name="nome" type="text" placeholder="Digite seu nome completo">
                 <span id="txtNome"></span>
 
                 <label for="email">E-mail</label>
                 <input id="email" name="email" type="text" placeholder="Digite seu e-mail">
-                <span id="txtemail"></span>
+                <span id="txtEmail"></span>
 
                 <label for="assunto">Assunto</label>
                 <input id="assunto" name="assunto" type="text"
@@ -101,9 +108,10 @@
                 <label for="mensagem">Mensagem</label>
                 <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..."></textarea>
 
-                <button class="botao" type="submit">Enviar Mensagem</button>
+                <button id="btnEnviar" class="btn-enviar" type="submit">Enviar Mensagem</button>
 
             </form>
+
         </section>
 
     </main>
