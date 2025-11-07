@@ -17,7 +17,6 @@
     <meta name="author" content="Rafaela Lemes">
     <meta name="description"
         content="Portfólio de Rafaela Lemes — Desenvolvedora Full Stack.Especialista em criar soluções digitais modernas, intuitivas e de alto desempenho. Explore meus projetos e entre em contato para construirmos algo incrível juntos.">
-    <meta name="robots" content="index, follow">
 
     <!--1 Favicon-->
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
@@ -30,9 +29,9 @@
 
     <!--Navbar - Menu-->
     <header class="flex menu_container">
-        <article class="menu_content">
+        <div class="menu_content">
             <div id="titulo">
-                <a href="#">Portfólio</a>
+                <a href="#hero">Portfólio</a>
             </div>
             <nav>
                 <ul class="flex menu_list">
@@ -41,15 +40,15 @@
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
-        </article>
+        </div>
     </header>
 
     <!--Área Principal do Site-->
     <main>
         <section id="hero" class="hero_container">
             <article class="hero_content">
-                <h4>👋🏽 Olá, eu sou a Rafa!</h4>
-                <h1>Desenvolvedora Full Stack</h1>
+                <h1>👋🏽 Olá, eu sou a Rafa!</h1>
+                <h2>Desenvolvedora Full Stack</h2>
                 <p>Especialista em criar soluções digitais modernas, intuitivas e de alto desempenho. Explore meus
                     projetos e entre em contato para construirmos algo incrível juntos.</p>
                 <div class="hero_buttons flex">
@@ -60,51 +59,28 @@
             </article>
             <figure class="hero_image">
                 <img src="assets/img/rafa3.png" alt="Ilustração com uma pessoa desenvolvedora escrevendo código"
-                    class="ilustracao float animation">
+                    class="ilustracao float animation" width="600" height="600" loading="eager">
             </figure>
         </section>
 
         <section id="about" class="about_container">
 
-            <figure class="about_image">
-                <img src="assets/img/rafaela.png" alt="Foto da pessoa desenvolvedora">
-            </figure>
 
-            <article class="about_content">
-                <h2>Sobre Mim</h2>
-                <p>Sou Rafaela Lemes, uma desenvolvedora Full Stack apaixonada por tecnologia e inovação. Com
-                    experiência em diversas linguagens de programação e frameworks, estou sempre em busca de novos
-                    desafios para aprimorar minhas habilidades e contribuir para projetos impactantes.</p>
-                <p>Minha missão é transformar ideias em soluções digitais eficientes e acessíveis, proporcionando uma
-                    experiência única aos usuários. Vamos trabalhar juntos para criar algo incrível!</p>
-
-                <div class="about_stats">
-                    <a href="#" target="_blank" class="botao">Ver GitHub</a>
-                    <div class="stat-item">
-                        <p class="stat-numer">100</p>
-                        <p class="stat-label">Seguidores</p>
-                    </div>
-                    <div class="stat-item">
-                        <p class="stat-numer">500</p>
-                        <p class="stat-label">Repositórios</p>
-                    </div>
-                </div>
-
-            </article>
         </section>
 
         <section id="contact" class="contact_container">
             <article class="contact_info">
-                <h4>Vamos trabalhar juntos?</h4>
+                <h2>Vamos trabalhar juntos?</h2>
                 <p>Se você tem um projeto em mente ou apenas quer dizer olá, adoraria ouvir de você! Entre em contato
                     comigo através do formulário abaixo ou pelas minhas redes sociais.</p>
                 <div class="social_container">
                     <a href="https://www.linkedin.com/in/rafaela-lemes-a310861b6/" target="_blank"
-                        class="social_icon"><img src="/assets/img/linkedin.svg" alt="Link para o LinkedIn"></a>
-                    <a href="https://github.com/LemesdeMorais" target="_blank" class="social_icon"><img
-                            src="/assets/img/github.svg" alt="Link para o GitHub"></a>
-                    <a href="https://www.instagram.com/raafalemes/" target="_blank" class="social_icon"><img
-                            src="/assets/img/instagram.svg" alt="Link para o Instagram"></a>
+                        rel="noopener noreferrer" class="social_icon"><img src="assets/img/linkedin.svg"
+                            alt="Link para o LinkedIn"></a>
+                    <a href="https://github.com/LemesdeMorais" target="_blank" rel="noopener noreferrer"
+                        class="social_icon"><img src="assets/img/github.svg" alt="Link para o GitHub"></a>
+                    <a href="https://www.instagram.com/raafalemes/" target="_blank" rel="noopener noreferrer"
+                        class="social_icon"><img src="assets/img/instagram.svg" alt="Link para o Instagram"></a>
                 </div>
             </article>
 
@@ -132,11 +108,18 @@
 
     </main>
 
+
+
     <!--Rodapé-->
     <footer>
         Feito com ❤️ e café por
-        <a href="https://lemesdemorais.github.io/Front-end-Rafaela/">Rafaela Lemes </a>
+        <a href="https://lemesdemorais.github.io/Front-end-Rafaela/" target="_blank" rel="noopener noreferrer">Rafaela
+            Lemes</a>
     </footer>
+
+    <!--Script JavaScript-->
+    <script src="assets/js/scripts.js"></script>
+
 </body>
 
 </html>
