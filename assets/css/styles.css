@@ -140,7 +140,8 @@ button {
     justify-content: space-between;
     /*joga um pro lado e outro pro outro com espaço entre eles*/
     align-items: center;
-    width: 70rem;
+    max-width: 70rem;
+    width: 100%;
     height: 100%;
     padding: 0 1.5rem;
     margin: 0 auto;
@@ -215,7 +216,9 @@ button {
 
 .hero_image {
     flex: 1;
-    display: flex;
+    max-width: 100%;
+    height: auto;
+    display: block;
     justify-content: center;
     align-items: center;
 }
@@ -367,7 +370,7 @@ button {
 .contact_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin: 4rem auto 2 rem;
+    margin: 4rem auto 2rem;
     gap: 4rem;
 }
 
@@ -489,99 +492,7 @@ footer:hover a {
     transform: translateX(0.25rem);
 }
 
-/* RESPOSIVIDADE */
-/* Smartphones ate 490px */
 
-@media screen and (max-width: 490px) {
-    .Menu_content {
-        justify-content: center;
-        padding: 0 1 rem;
-    }
-
-    .menu_list {
-        display: none;
-    }
-
-    #titulo a {
-        font-size: 1.25rem;
-        text-align: center;
-    }
-
-    /* Hero */
-    .hero_container {
-        flex-direction: column-reverse;
-        gap: 2rem;
-        padding: 1.5rem 1rem;
-        min-height: auto;
-    }
-
-    .hero_content h1 {
-        font-size: 1rem;
-    }
-
-    .hero_content h2 {
-        font-size: 2rem;
-        line-height: 2.5rem;
-    }
-
-    .hero_content p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    .hero_buttons {
-        flex-direction: column;
-        width: 100%;
-        gap: 0.75rem;
-    }
-
-    .about_container {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .about_content h2 {
-        font-size: 1.75rem;
-    }
-
-    .about_content p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    .about_stats {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .about_stats .botao {
-        width: 100%;
-        font-size: 0.9rem;
-        font-weight: 500;
-        padding: 0.5rem 1.5rem;
-    }
-
-    .contact_container {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .contact_content h2 {
-        font-size: 1.75rem;
-    }
-
-    .contact_content p {
-        font-size: 1rem;
-        line-height: 1.5rem;
-    }
-
-    .social_container {
-        flex-direction: flex;
-        gap: 2rem;
-    }
-
-}
 
 /* PAGINA SUCESS  */
 .sucess_container {
@@ -661,4 +572,169 @@ footer:hover a {
 .logar {
     filter: brightness(0) saturate(100%) invert(30%) sepia(80%) saturate(5000%) hue-rotate(255deg);
 
+}
+
+
+/* RESPOSIVIDADE */
+/* Smartphones ate 490px */
+
+@media screen and (max-width: 490px) {
+    .menu_content {
+        justify-content: center;
+        padding: 0 1rem;
+    }
+
+    .menu_list {
+        display: none;
+    }
+
+    #titulo a {
+        font-size: 1.25rem;
+        text-align: center;
+    }
+
+    /* Hero */
+    .hero_container {
+        flex-direction: column-reverse;
+        gap: 2rem;
+        padding: 1.5rem 1rem;
+        min-height: auto;
+    }
+
+    .hero_content h1 {
+        font-size: 1rem;
+    }
+
+    .hero_content h2 {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
+    .hero_content p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .hero_buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+
+    .about_container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about_content h2 {
+        font-size: 1.75rem;
+    }
+
+    .about_content p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .about_stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .about_stats .botao {
+        width: 100%;
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0.5rem 1.5rem;
+    }
+
+    .contact_container {
+        display: grid;
+        /* mantém grid */
+        grid-template-columns: 1fr;
+        /* 1 coluna */
+        gap: 2rem;
+        padding: 1.5rem 1rem;
+        min-height: auto;
+    }
+
+    .contact_info h2 {
+        /* era .contact_content */
+        font-size: 1.75rem;
+    }
+
+    .contact_info p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .social_container {
+        flex-direction: row;
+        gap: 1rem;
+    }
+}
+
+/* ====== SUCESS (responsivo) ====== */
+@media (max-width: 768px) {
+    .sucess_container {
+        margin: 3rem 1rem;
+        /* afasta das bordas */
+        padding: 1.5rem;
+    }
+
+    .sucess_content h1 {
+        font-size: 1.75rem;
+    }
+
+    .sucess_content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sucess_container {
+        margin: 2rem 1rem;
+        padding: 1.25rem;
+    }
+
+    .sucess_icon {
+        width: 3.5rem;
+    }
+
+    .sucess_content h1 {
+        font-size: 1.5rem;
+        line-height: 1.9rem;
+    }
+
+    .sucess_content p {
+        font-size: .95rem;
+        line-height: 1.4rem;
+    }
+
+    /* botão 100% no mobile */
+    .sucess_button .botao {
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .login_container {
+        margin: 2rem 1rem;
+        padding: 1.25rem;
+        border-width: 2px;
+    }
+
+    .login_content h1 {
+        font-size: 1.35rem;
+        line-height: 1.7rem;
+    }
+
+    .login_form {
+        gap: .85rem;
+    }
+
+    .login_button .botao {
+        width: 100%;
+    }
 }
