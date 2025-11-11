@@ -38,6 +38,7 @@
                     <li><a href="#hero">Início</a></li>
                     <li><a href="#about">Sobre</a></li>
                     <li><a href="#contact">Contato</a></li>
+                    <li><a href="projetos.html" data-transition>Projetos</a></li>
                     <li><a href="login.html" class="login">
                             <img src="assets/img/login.svg" width="20" height="20" class="login-icon">
                         </a></li>
@@ -66,6 +67,110 @@
             </figure>
         </section>
 
+
+        <!-- ===========================================================
+     SEÇÃO DE TECNOLOGIAS (ANIMAÇÃO COM ANIME.JS)
+     Cole este bloco antes do <section id="about">
+=========================================================== -->
+
+        <section id="stacks" class="stacks_container" aria-label="Tecnologias que uso">
+            <header class="stacks_header">
+                <h2>Tecnologias</h2>
+                <p>Stacks que utilizo no desenvolvimento</p>
+            </header>
+
+            <!-- Linha 1 -->
+            <div class="row-header">
+                <h3>Linguagens & Front-end</h3>
+                <button class="button refresh" id="refresh-row-1">Refresh</button>
+            </div>
+            <div class="row row-1">
+                <div class="tech"><img src="https://img.icons8.com/?size=100&id=lTKW3iI3wIT0&format=png&color=000000"
+                        alt="Java">
+                </div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/python" alt="Python"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/php" alt="PHP"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/cplusplus" alt="C++"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/html5" alt="HTML"></div>
+                <div class="tech"><img src="https://img.icons8.com/?size=100&id=11935&format=png&color=000000"
+                        alt="CSS"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/react" alt="React"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/bootstrap" alt="Bootstrap"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/nextdotjs" alt="Next.js"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/nodedotjs" alt="Node.js"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/spring" alt="Spring"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/mysql" alt="MySQL"></div>
+                <div class="tech"><img src="https://img.icons8.com/?size=100&id=38561&format=png&color=000000"
+                        alt="MySQL"></div>
+
+            </div>
+
+
+            <!-- Linha 3 -->
+            <div class="row-header">
+                <h3>Ferramentas e Outros</h3>
+                <button class="button refresh" id="refresh-row-3">Refresh</button>
+            </div>
+            <div class="row row-3">
+                <div class="tech"><img src="https://cdn.simpleicons.org/git" alt="Git"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/github" alt="GitHub"></div>
+                <div class="tech"><img src="https://cdn.simpleicons.org/insomnia" alt="Insomnia"></div>
+
+            </div>
+        </section>
+
+        <!-- Anime.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+        <!-- Script da animação -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+
+                const timelines = {};
+
+                function animar(rowSelector) {
+                    const items = document.querySelectorAll(`${rowSelector} .tech`);
+                    if (!items.length) return;
+
+                    if (timelines[rowSelector]) timelines[rowSelector].pause();
+
+                    const startIndex = Math.floor(Math.random() * items.length);
+
+                    anime({
+                        targets: items,
+                        opacity: anime.stagger([1, 0.3], { from: startIndex }),
+                        duration: 0
+                    });
+
+                    const tl = anime.timeline({ loop: true });
+
+                    tl.add({
+                        targets: items,
+                        scale: [
+                            { value: [0.5, 1], duration: 250, easing: "easeOutQuad" },
+                            { value: 0.5, duration: 750, easing: "easeInOutQuad" }
+                        ],
+                        delay: anime.stagger(60, { from: startIndex })
+                    });
+
+                    tl.seek(750);
+                    timelines[rowSelector] = tl;
+                }
+
+                animar(".row-1");
+                animar(".row-3");
+
+                document.getElementById("refresh-row-1").onclick = () => animar(".row-1");
+                document.getElementById("refresh-row-3").onclick = () => animar(".row-3");
+            });
+        </script>
+
+
+
+
+
         <section id="about" class="about_container">
 
 
@@ -74,7 +179,8 @@
         <section id="contact" class="contact_container">
             <article class="contact_info">
                 <h2>Vamos trabalhar juntos?</h2>
-                <p>Se você tem um projeto em mente ou apenas quer dizer olá, adoraria ouvir de você! Entre em contato
+                <p>Se você tem um projeto em mente ou apenas quer dizer olá, adoraria ouvir de você! Entre em
+                    contato
                     comigo através do formulário abaixo ou pelas minhas redes sociais.</p>
                 <div class="social_container">
                     <a href="https://www.linkedin.com/in/rafaela-lemes-a310861b6/" target="_blank"
@@ -121,13 +227,16 @@
     <!--Rodapé-->
     <footer>
         Feito com ❤️ e café por
-        <a href="https://lemesdemorais.github.io/Front-end-Rafaela/" target="_blank" rel="noopener noreferrer">Rafaela
-            Lemes</a>
+        <a href="https://lemesdemorais.github.io/Front-end-Rafaela/" target="_blank" rel="noopener noreferrer">
+            Rafaela Lemes
+        </a>
     </footer>
 
     <!--Script JavaScript-->
-    <script src="assets/js/scripts.js"></script>
+    <script type="module" src="assets/js/scripts.js"></script>
 
+    <!-- Transição (ADICIONE esta linha) -->
+    <script type="module" src="assets/js/transition.js"></script>
 </body>
 
 </html>

@@ -12,17 +12,18 @@
 
 /* === VARIÁVEIS === */
 :root {
-    /* Cores */
-    --purple-50: #f4eaff;
-    --purple-100: #e9dcfa;
-    --purple-200: #cdb3f0;
-    --purple-300: #b186e5;
-    --purple-400: #9460db;
-    --purple-500: #6b36c8;
-    --purple-600: #5b2ca0;
-    --purple-700: #4c2177;
-    --purple-800: #441f88;
-    --purple-900: #2a0e4d;
+    /* Cores (nova paleta) */
+    --purple-50: #f795ce;
+    --purple-100: #cc82c1;
+    --purple-200: #a271b1;
+    --purple-300: #78609d;
+    --purple-400: #504f87;
+    --purple-500: #273e6e;
+    --purple-600: #1f335a;
+    --purple-700: #182946;
+    --purple-800: #111f33;
+    --purple-900: #0b1521;
+
     --gray-100: #f5f5f5;
     --gray-200: #e8e8e8;
     --gray-400: #505861;
@@ -30,12 +31,13 @@
     --white: #ffffff;
     --error: #e63946;
 
-    /* Sombras */
+    /* Sombras (ajustadas para combinar com o novo roxo) */
     --shadow-sm: 0 0.25rem 0.5rem #0000000D;
-    --shadow-md: 0 0.25rem 0.75rem #6B36C84D;
-    --shadow-lg: 0 0.5rem 1.5rem #6B36C833;
-    --shadow-focus: 0 0 0 0.25rem #6B36C81A;
+    --shadow-md: 0 0.25rem 0.75rem #273e6e4d;
+    --shadow-lg: 0 0.5rem 1.5rem #273e6e33;
+    --shadow-focus: 0 0 0 0.25rem #273e6e1A;
 }
+
 
 html {
     scroll-behavior: smooth;
@@ -193,7 +195,7 @@ button {
 
 /* Seção Hero */
 .hero_container {
-    min-height: calc(100vh-5rem);
+    min-height: calc(100vh - 5rem);
     display: flex;
     align-items: center;
     gap: 4rem;
@@ -575,6 +577,118 @@ footer:hover a {
 }
 
 
+/* === TECNOLOGIAS === */
+.stacks_container {
+    max-width: 70rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    scroll-margin-top: 6rem;
+}
+
+.stacks_header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--purple-600);
+    margin-bottom: .25rem;
+}
+
+.stacks_header p {
+    color: var(--gray-400);
+    margin-bottom: 1.5rem;
+}
+
+.row-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.25rem 0 .75rem;
+}
+
+.row-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--black-800);
+}
+
+.controls {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.button.refresh {
+    background: var(--purple-500);
+    color: var(--white);
+    border: none;
+    border-radius: 999px;
+    padding: .5rem .9rem;
+    font-size: .9rem;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.button.refresh:hover {
+    background: var(--purple-800);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.button.refresh:focus-visible {
+    outline: 3px solid var(--purple-200);
+    outline-offset: 2px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: center;
+}
+
+.tech {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    background: var(--white);
+    border: 2px solid var(--gray-200);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    will-change: transform, opacity;
+}
+
+.tech img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+@media (max-width: 900px) {
+    .row {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .tech {
+        width: 64px;
+        height: 64px;
+    }
+}
+
+
+
+
+
+
+
 /* RESPOSIVIDADE */
 /* Smartphones ate 490px */
 
@@ -738,3 +852,20 @@ footer:hover a {
         width: 100%;
     }
 }
+
+/* ====== Transição Warp (overlay) ====== */
+.transition-overlay{
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.transition-overlay.active{ display: flex; }
+.transition-overlay canvas{ width: 100%; height: 100%; }
+
+/* Fallback sem WebGL */
+.fade-out{ animation: fade .5s ease forwards; }
+@keyframes fade { to { opacity: 0; filter: blur(2px); } }
